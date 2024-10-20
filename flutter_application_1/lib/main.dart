@@ -56,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {}, 
-            color: Colors.white, 
+            onPressed: () {},
+            color: Colors.white,
           ),
         ],
       ),
@@ -104,22 +104,34 @@ class HomePage extends StatelessWidget {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            Container(
-              height: 300,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/image1.jpeg'),
-                  fit: BoxFit.fill,
+            // Wrap the first container in a GestureDetector
+            GestureDetector(
+              onTap: () {
+                // Navigate to the FullImagePage when tapped
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FullImagePage(imagePath: 'assets/image1.jpeg'),
+                  ),
+                );
+              },
+              child: Container(
+                height: 300,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/image1.jpeg'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              child: Center(
-                child: Text(
-                  'Container ${(index * 2) + 1}',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                child: Center(
+                  child: Text(
+                    'Container ${(index * 2) + 1}',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -149,6 +161,40 @@ class HomePage extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+}
+
+// New FullImagePage to show the image at the top
+class FullImagePage extends StatelessWidget {
+  final String imagePath;
+
+  FullImagePage({required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Full Image'),
+        backgroundColor: Colors.black,
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 300, // Only occupy half of the screen height
+            width: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(imagePath),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Container(), // Remaining space will be blank
+          ),
+        ],
+      ),
     );
   }
 }
