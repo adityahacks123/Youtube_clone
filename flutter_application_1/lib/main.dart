@@ -97,7 +97,13 @@ class HomePage extends StatelessWidget {
           children: [
             Container(
               height: 300,
-              color: Colors.blue,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/whatsapp_image_2024_10_20.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Center(
                 child: Text(
                   'Container ${(index * 2) + 1}',
