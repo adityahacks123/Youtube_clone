@@ -51,8 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: Colors.black, // Set the background color of the AppBar
-        foregroundColor: Colors.white, // Set the title color to white
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {}, // No functionality for now
+            color: Colors.white, // Set icon color to white
+          ),
+        ],
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -102,7 +109,7 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/image1.jpeg'), 
+                  image: AssetImage('assets/image1.jpeg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -110,7 +117,7 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   'Container ${(index * 2) + 1}',
                   style: TextStyle(
-                    color: Colors.white, // Set text color to white for better visibility
+                    color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -123,7 +130,7 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/image2.jpeg'), 
+                  image: AssetImage('assets/image2.jpeg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -131,7 +138,7 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   'Container ${(index * 2) + 2}',
                   style: TextStyle(
-                    color: Colors.white, // Set text color to white for better visibility
+                    color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
