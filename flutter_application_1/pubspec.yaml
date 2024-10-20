@@ -53,7 +53,8 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/whatsapp_image_2024_10_20.jpeg
+    - assets/image1.jpeg
+    - assets/image2.jpeg
 
 
 

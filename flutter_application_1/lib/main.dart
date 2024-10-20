@@ -51,6 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: Colors.black, // Set the background color of the AppBar
+        foregroundColor: Colors.white, // Set the title color to white
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -81,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.black,
         onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed, // Keeps the items fixed in place
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
@@ -100,25 +102,39 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/whatsapp_image_2024_10_20.jpeg'),
+                  image: AssetImage('assets/image1.jpeg'), 
                   fit: BoxFit.cover,
                 ),
               ),
               child: Center(
                 child: Text(
                   'Container ${(index * 2) + 1}',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                    color: Colors.white, // Set text color to white for better visibility
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
             SizedBox(height: 5),
             Container(
               height: 300,
-              color: Colors.green,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/image2.jpeg'), 
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Center(
                 child: Text(
                   'Container ${(index * 2) + 2}',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(
+                    color: Colors.white, // Set text color to white for better visibility
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
