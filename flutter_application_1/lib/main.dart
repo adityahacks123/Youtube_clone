@@ -56,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {}, // No functionality for now
-            color: Colors.white, // Set icon color to white
+            onPressed: () {}, 
+            color: Colors.white, 
           ),
         ],
       ),
@@ -110,7 +110,7 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/image1.jpeg'),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
               child: Center(
@@ -131,7 +131,7 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/image2.jpeg'),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
               child: Center(
